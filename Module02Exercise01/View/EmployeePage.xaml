@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module02Exercise01.View.EmployeePage"
+             Title="EmployeePage">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#2196F3" Offset="0.0" />
+            <GradientStop Color="#64B5F6" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Spacing="20" Padding="10">
+
+        <Label Text="Manager" 
+               FontSize="24" 
+               FontAttributes="Bold"
+               TextColor="White" />
+
+        <Label Text="{Binding ManagerName}" 
+               FontSize="20" 
+               TextColor="White" />
+
+        <Button Text="Load Manager Data"
+                Command="{Binding LoadEmployeeDataCommand}" 
+                BackgroundColor="#1976D2" 
+                TextColor="White" 
+                HeightRequest="50" 
+                CornerRadius="25"
+                FontAttributes="Bold" 
+                Margin="0,10"/>
+
+        <Label Text="Employees" 
+               FontSize="24" 
+               FontAttributes="Bold"
+               TextColor="White" />
+
+        <ListView ItemsSource="{Binding Employees}" 
+                  BackgroundColor="White" 
+                  SeparatorColor="#BBDEFB"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding FullName}" 
+                                   Grid.Column="0" 
+                                   FontSize="18" 
+                                   VerticalOptions="Center"
+                                   TextColor="#1E88E5" />
+                            <Label Text="{Binding Position}" 
+                                   Grid.Column="1" 
+                                   FontSize="18" 
+                                   VerticalOptions="Center"
+                                   TextColor="#1E88E5" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

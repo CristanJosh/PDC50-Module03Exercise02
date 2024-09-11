@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module02Exercise01.View.OfflinePage"
+             Title="OfflinePage">
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#FF5722" Offset="0.0" />
+            <GradientStop Color="#FF8A65" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <VerticalStackLayout Padding="10" VerticalOptions="Center">
+        <Label Text="Hello" 
+               x:Name="MyLabel1"
+               FontSize="28" 
+               HorizontalOptions="Center" 
+               TextColor="White" 
+               FontAttributes="Bold"/>
+        
+        <Label Text="No Internet Connection" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               TextColor="White"
+               HorizontalOptions="Center" />
+
+        <Button Text="Retry" 
+                Command="{Binding RetryCommand}" 
+                BackgroundColor="#D84315" 
+                TextColor="White" 
+                HeightRequest="50" 
+                CornerRadius="25"
+                FontAttributes="Bold"
+                Margin="0,10" />
+
+        <Button Text="Close App" 
+                Command="{Binding CloseCommand}" 
+                BackgroundColor="#D84315" 
+                TextColor="White" 
+                HeightRequest="50" 
+                CornerRadius="25"
+                FontAttributes="Bold" 
+                Margin="0,10" />
+    </VerticalStackLayout>
+</ContentPage>
